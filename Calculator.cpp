@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include "Parser.h"
+#include "CalcExpr.h"
 #include <iostream>
 #include <list>
 
@@ -11,11 +12,12 @@ using namespace std;
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	Parser p;// = new Parser();
-	p.getOPZ();
-	while (!p.output.empty()) {
-		cout << p.output.front();
-		p.output.pop_front();
+	Parser p;
+	CalcExpr ce;
+	while (1) {
+		p.getOPZ();
+		cout << "Ответ: " << ce.calcOPZ(&(p.output)) << endl;
+		p.output.clear();
 	}
 	system("pause");
 	

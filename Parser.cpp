@@ -19,9 +19,9 @@ void Parser::getOPZ() {
 
 	cout << "Выражение: \n";
 	cin >> input;
-	cout << "ОПЗ: ";
 	
 	list<char> stack;	//стек
+	//output.push_back(':');
 	int flag = 0;		//флаг о встрече знака равно
 	int flagE = 0;
 	int i = 0;			//счетчик для входной строки
@@ -256,7 +256,7 @@ void Parser::getOPZ() {
 		}
 		default: {
 			output.push_back(input[i]);
-			if ((input[i + 1] == '*') || (input[i + 1] == '/') || (input[i + 1] == '^') || (input[i + 1] == '+') || (input[i + 1] == '-') || (input[i + 1] == 'e') || (input[i + 1] == '.') || (input[i + 1] == ')')) {
+			if ((input[i + 1] == '*') || (input[i + 1] == '/') || (input[i + 1] == '^') || (input[i + 1] == '+') || (input[i + 1] == '-') || (input[i + 1] == 'e') || (input[i + 1] == '=') || (input[i + 1] == '.') || (input[i + 1] == ')') || (input[i + 1] == '(')) {
 				output.push_back(' '); //если число закончилось, ставим пробел
 				if (flagE == 1) {
 					output.push_back(stack.back());
