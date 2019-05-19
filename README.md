@@ -1,1 +1,1 @@
-# Calculator
+# Console engineering calculator
